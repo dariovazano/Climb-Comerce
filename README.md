@@ -11,7 +11,3 @@
 - no hace falta hacer la siguiente importación desde la versión 18 de react "import React from 'react'" por eso la he eliminado siempre.
 
 <a href="https://imgflip.com/gif/7v2b9j"><img src="https://i.imgflip.com/7v2b9j.gif" title=""/></a>
-<<<<<<< HEAD
-=======
-
->>>>>>> 441f5da658c43d443be9fa970f185a2b96d4cfd6

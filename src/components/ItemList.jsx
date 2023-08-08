@@ -1,12 +1,10 @@
 import Item from "./Item";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Box } from "@mui/material";
-import { PropTypes } from "@mui/material";
 
 const ItemList = ({ productos }) => {
   return (
     <Box
-      className="ImgHome"
       sx={{
         display: "flex",
         flexDirection: "row",
