@@ -1,3 +1,18 @@
 body{
   margin: 0;
 }
+
+Link{
+  text-decoration: none !important;
+}
+
+.ImgHome{
+  background-image: url(./images/pack_25_tomas_imagen1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ImgLogo{
+  width: 100px;
+}
+

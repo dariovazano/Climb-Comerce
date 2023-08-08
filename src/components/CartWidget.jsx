@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,6 +22,7 @@ const CartWidget = () => {
     }));
 
     return (
+         <Link to={"/Cart"}> 
         <Button color="inherit">
             <IconButton aria-label="cart">
                 <StyledBadge badgeContent={99} color="secondary">
@@ -28,6 +30,7 @@ const CartWidget = () => {
                 </StyledBadge>
             </IconButton>
         </Button>
+        </Link>
     )
 }
 
