@@ -6,8 +6,22 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ShoppingCartContext from "./context/ShoppingCartContext";
+import { useState, useEffect } from "react";
+import Loading from "./components/Loading";
 
 const App = () => {
+  const [loading, setloading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setloading(false);
+    }, 5000);
+  });
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <BrowserRouter>
       <NavBar />

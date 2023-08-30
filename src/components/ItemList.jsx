@@ -1,6 +1,7 @@
 import Item from "./Item";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Box } from "@mui/material";
+import React from "react";
 
 const ItemList = ({ productos }) => {
   return (
@@ -33,4 +34,4 @@ const ItemList = ({ productos }) => {
   );
 };
 
-export default ItemList;
+export default React.memo(ItemList); //el reac memo hace que no se realice el map cuando se vuelve a enviar la veriable productos sinedo esta igual a la anterior

@@ -57,4 +57,4 @@ const ItemDetail = ({ productos }) => {
   );
 };
 
-export default ItemDetail;
+export default React.memo(ItemDetail); //reacmemo hace que no se tenga que cargar nuevamente   el map si es que no ha cambiado el input
