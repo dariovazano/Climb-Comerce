@@ -16,6 +16,7 @@ const ItemDetail = ({ productos }) => {
   console.log(filteredproductos.nombre);
   return (
     <Box
+      className="ImgHome"
       sx={{
         display: "flex",
         flexDirection: "row",
