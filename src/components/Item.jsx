@@ -7,15 +7,16 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-const Item = ({ id, nombre, descripcion, stock }) => {
+const Item = ({ id, nombre, descripcion, imagen }) => {
+  console.log(imagen);
   return (
     <Card>
       <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        sx={{ height: 300, maxWidth: 345 }}
+        image={imagen}
         title="green iguana"
       />
-      <CardContent>
+      <CardContent sx={{ height: 140, maxWidth: 345 }}>
         <Typography gutterBottom variant="h5" component="div">
           {nombre}
         </Typography>

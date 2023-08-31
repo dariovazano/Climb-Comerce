@@ -18,13 +18,15 @@ const ItemList = ({ productos }) => {
     >
       <Grid container spacing={3}>
         {productos.map((p) => {
+          console.log(p.imagen);
+
           return (
             <Grid sx={3}>
               <Item
                 id={p.id}
-                nombre={p.nombre}
+                nombre={p.producto}
                 descripcion={p.descripcion}
-                stock={p.stock}
+                imagen={p.imagen}
               />
             </Grid>
           );

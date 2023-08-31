@@ -36,6 +36,12 @@ const NavBar = () => {
               Climb-Comerse
             </Typography>
 
+            <div>
+              <Button variant="outlined">
+                <Link to={`/category/${true}`}>Productos</Link>
+              </Button>
+            </div>
+
             {/* menu categorias */}
             <div>
               <Button
