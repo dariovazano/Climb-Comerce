@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Cart from "./components/Cart";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetail from "./components/ItemDetail";
 import ShoppingCartContext from "./context/ShoppingCartContext";
 import { useState, useEffect } from "react";
 import Loading from "./components/Loading";
@@ -37,7 +37,7 @@ const App = () => {
             path="/category/:category"
             element={<ItemListContainer />}
           />
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/item/:id" element={<ItemDetail />} />
         </Routes>
       </ShoppingCartContext>
     </BrowserRouter>

@@ -7,8 +7,9 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-const Item = ({ id, nombre, descripcion, imagen }) => {
-  console.log(imagen);
+const Item = ({ id, nombre, descripcion, imagen, precio }) => {
+  console.log(id);
+  console.log(nombre);
   return (
     <Card>
       <CardMedia
@@ -22,6 +23,9 @@ const Item = ({ id, nombre, descripcion, imagen }) => {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {descripcion}
+        </Typography>
+        <Typography variant="h6" color="text.secondary">
+          {precio}€
         </Typography>
       </CardContent>
       <CardActions>

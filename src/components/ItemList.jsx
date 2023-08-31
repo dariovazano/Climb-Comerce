@@ -6,6 +6,7 @@ import React from "react";
 const ItemList = ({ productos }) => {
   return (
     <Box
+      className="ImgHome"
       sx={{
         display: "flex",
         flexDirection: "row",
@@ -27,6 +28,7 @@ const ItemList = ({ productos }) => {
                 nombre={p.producto}
                 descripcion={p.descripcion}
                 imagen={p.imagen}
+                precio={p.precio}
               />
             </Grid>
           );

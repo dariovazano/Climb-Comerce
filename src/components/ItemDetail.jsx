@@ -8,12 +8,28 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import { useEffect, useState } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
-const ItemDetail = ({ productos }) => {
+const ItemDetail = () => {
   const { id } = useParams();
+  const [producto, setproducto] = useState([]);
+  console.log(producto);
 
-  const filteredproductos = productos.filter((producto) => producto.id == id);
-  console.log(filteredproductos.nombre);
+  useEffect(() => {
+    const db = getFirestore();
+
+    const oneItem = doc(db, "Holds", id);
+    getDoc(oneItem).then((snapshot) => {
+      if (snapshot.exists()) {
+        const docs = { id: snapshot.id, ...snapshot.data() };
+        setproducto(docs);
+      }
+    });
+  }, []);
+
+  console.log(producto);
+
   return (
     <Box
       className="ImgHome"
@@ -28,30 +44,29 @@ const ItemDetail = ({ productos }) => {
       }}
     >
       <Grid container spacing={3}>
-        {filteredproductos.map((p) => {
-          return (
-            <Grid sx={3}>
-              <Card key={p.id}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image="/static/images/cards/contemplative-reptile.jpg"
-                  title="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {p.nombre}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {p.descripcion}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Añadir al carrito</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          );
-        })}
+        <Grid sx={3}>
+          <Card key={id}>
+            <CardMedia
+              sx={{ height: 500 }}
+              image={producto.imagen}
+              title="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {producto.producto}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {producto.descripcion}
+              </Typography>
+              <Typography variant="h6" color="text.secondary">
+                {producto.precio}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Añadir al carrito</Button>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   );
