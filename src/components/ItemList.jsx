@@ -19,8 +19,6 @@ const ItemList = ({ productos }) => {
     >
       <Grid container spacing={3}>
         {productos.map((p) => {
-          console.log(p.imagen);
-
           return (
             <Grid sx={3}>
               <Item

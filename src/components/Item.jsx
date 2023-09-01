@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 const Item = ({ id, nombre, descripcion, imagen, precio }) => {
-  console.log(id);
-  console.log(nombre);
   return (
     <Card>
       <CardMedia

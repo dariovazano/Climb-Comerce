@@ -7,12 +7,8 @@ export const ShoppingCartProvider = ({ children }) => {
 
   const longitud = cart.length;
 
-  console.log(longitud);
-
-  const nombre = "lorena";
-
   return (
-    <CartContext.Provider value={{ cart, setcart, nombre, longitud }}>
+    <CartContext.Provider value={{ cart, setcart, longitud }}>
       {children}
     </CartContext.Provider>
   );

@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setloading(false);
-    }, 5000);
+    }, 1000);
   });
 
   if (loading) {
@@ -24,8 +24,8 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <ShoppingCartContext>
+        <NavBar />
         <Routes>
           {/* <ItemListContainer/> */}
 
