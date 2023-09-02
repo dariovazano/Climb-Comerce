@@ -112,7 +112,7 @@ const ItemDetail = () => {
               </ButtonGroup>
             </box>
             <CardActions>
-              <Button size="small" onClick={agregarItem}>
+              <Button variant="outlined" size="medium" onClick={agregarItem}>
                 <Link to={`/category/${true}`}>Añadir al carrito</Link>
               </Button>
             </CardActions>

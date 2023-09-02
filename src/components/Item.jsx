@@ -27,8 +27,8 @@ const Item = ({ id, nombre, descripcion, imagen, precio }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">
-          <Link to={`/item/${id}`}>Detalle</Link>
+        <Button variant="outlined" size="small">
+          <Link to={`/item/${id}`}> Detalle</Link>
         </Button>
       </CardActions>
     </Card>

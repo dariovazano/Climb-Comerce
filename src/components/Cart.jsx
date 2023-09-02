@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Box } from "@mui/material";
@@ -10,11 +10,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import Alert from "@mui/material/Alert";
-import Stack from "@mui/material/Stack";
 import Comprobante from "./Comprobante";
 
 const Cart = () => {
+  ///////////////////////////////////////////////////////Me traigo todo el contexto
   const {
     cart,
     setcart,
@@ -26,23 +25,34 @@ const Cart = () => {
     email,
     setemail,
   } = useContext(CartContext);
-
+  ////////////////////////////////////////////////////////Logia del valor Total
   const total = cart.reduce((accumulator, p) => {
     return accumulator + p.cuenta * p.precio;
   }, 0);
-  console.log(total);
-
-  ///logica del formulario
-
+  ///////////////////////////////////////////////////////77logica del formulario
+  const [hayform, sethayform] = useState();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
     console.log(name);
     console.log(apellido);
-    return <Comprobante />;
+    sethayform(true);
+    setcart([]);
+  };
+  //////////////////////////////////////////////////Logica del boton de borrar
+  const hanleBorrar = (borrarId) => {
+    let auxcart = cart.filter((item) => item.id != borrarId);
+    setcart(auxcart);
   };
 
-  return (
+  return hayform ? (
+    <Comprobante />
+  ) : longitud === 0 ? (
+    <Link to={`/category/${true}`}>
+      No hay productos por aqui te invito, has click aqui para volver a
+      productos
+    </Link>
+  ) : (
     <>
       <Box
         className="ImgHome"
@@ -78,8 +88,14 @@ const Cart = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">
-                      <Link>borrar</Link>
+                    <Button
+                      variant="contained"
+                      name={p.id}
+                      size="small"
+                      onClick={() => hanleBorrar(p.id)}
+                      value={p.id}
+                    >
+                      borrar
                     </Button>
                   </CardActions>
                 </Card>
@@ -153,7 +169,6 @@ const Cart = () => {
           comprar
         </Button>
       </Box>
-      <Comprobante />
     </>
   );
 };
