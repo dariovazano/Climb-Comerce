@@ -8,9 +8,10 @@ import { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 
 const CartWidget = () => {
+  //////////////////////////////////////////////traigo la cantidad de productos de  carrtio con un useContext
   const longitud = useContext(CartContext).longitud;
 
-  // variable del badge
+  ///////////////////////////////////////// variables del badge
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: -3,

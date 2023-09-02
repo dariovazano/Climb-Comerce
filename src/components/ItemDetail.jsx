@@ -13,10 +13,9 @@ import { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/ShoppingCartContext";
-import { Sledding } from "@mui/icons-material";
 
 const ItemDetail = () => {
-  //Logica de la parametrizacion del navegador y de la descarga del item desde Firebase
+  /////////////////////////////7Logica de la parametrizacion del navegador y de la descarga del item desde Firebase
   const { id } = useParams();
   const [producto, setproducto] = useState([]);
 
@@ -32,7 +31,7 @@ const ItemDetail = () => {
     });
   }, []);
 
-  //logia del contador
+  /////////////////////////////////////////////////////////////////logia del contador
   const [cuenta, setcuenta] = useState(1);
 
   const suma = () => setcuenta(cuenta + 1);
@@ -43,7 +42,7 @@ const ItemDetail = () => {
     }
   };
 
-  //logica de agregado al carrito
+  ///////////////////////////////////////////////////////////////////////////logica de agregado al carrito
   const { cart, setcart, longitud } = useContext(CartContext);
 
   const agregarItem = () => {
@@ -65,7 +64,6 @@ const ItemDetail = () => {
     }
   };
 
-  console.log(cart);
   return (
     <Box
       className="ImgHome"
